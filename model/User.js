@@ -20,7 +20,7 @@ const schema = mongoose.Schema({
     address: {
         type: String,
     },
-    admin: {
+    isAdmin: {
         type: Boolean,
     },
     category: {
@@ -35,11 +35,25 @@ const schema = mongoose.Schema({
     salary: {
         type: Number,
     },
-    profilePicture:{
-        type:String
+    profilePicture: {
+        type: String
     },
-    status:{
-        type:Boolean
-    }
+    status: {
+        type: Boolean
+    },
+    contact: {
+        type: String
+    },
+    dob: {
+        type: Date
+    },
+    attendence: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Attendence'
+    }],
+    teamLead: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    }]
 });
 module.exports = mongoose.model("User", schema);

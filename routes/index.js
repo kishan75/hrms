@@ -2,6 +2,7 @@ var router = require('express').Router();
 
 var controller = require("../controller/index");
 router.use('/post', require("./post"));
+router.use('/attendence',require("./attendence"));
 //router.use('/user', require("./user"));
 //router.use('/like', require("./like"));
 //router.use('/comment', require("./comment"));
