@@ -1,5 +1,5 @@
 module.exports = {
-    comment: require("./attendence"),
+    attendence: require("./attendence"),
     like: require("./like"),
     post: require("./post"),
     user: require("./user"),

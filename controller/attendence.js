@@ -51,7 +51,22 @@ collection.exit = function (req, res) {
 };
 
 collection.rangeData = function (req, res) {
-
+    model.Attendence.find({
+        user: req.body._id,
+        entry: {
+            $gte: req.body.startDate,
+            $let: req.body.lastDate
+        }
+    }, function (err, result) {
+        if (err) {
+            console.log(err);
+            res.status(500).send("internal server problem");
+        } else
+            res.status(200).send(JSON.stringify({
+                msg: "success",
+                data: result
+            }));
+    });
 };
 
 module.exports = collection;
