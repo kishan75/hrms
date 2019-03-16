@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Admin Panel</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="../../../node_modules/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="images/favicon.png" />
+<style>
+  #submitbtn{
+    background:transparent;
+    transition: all 0.6s 0s linear;
+    }
+    #submitbtn:hover{
+      background: rgba(0,0,255,0.7);
+    }
+</style>
+</head>
+
+<body>
+  <div class="body-wrapper">
+    <!-- partial:partials/_sidebar.html -->
+    <aside class="mdc-persistent-drawer mdc-persistent-drawer--open">
+      <nav class="mdc-persistent-drawer__drawer">
+        <div class="mdc-persistent-drawer__toolbar-spacer">
+          <a href="#" class="brand-logo" style="text-decoration-color: none">
+						ADMIN
+					</a>
+        </div>
+        <div class="mdc-list-group" style="height:100vh">
+          <nav class="mdc-list mdc-drawer-menu">
+            <div class="mdc-list-item mdc-drawer-item">
+              <a class="mdc-drawer-link" href="#" id="admin">
+                <i  class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">desktop_mac</i>
+                Admin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class='material-icons' style="font-size:15px;">add</i>
+              </a>
+              <a class="mdc-drawer-link" href="#" id="user" style="display:none;">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                User
+              </a>
+              <a class="mdc-drawer-link" href="#" id="organisation" style="display:none;">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Organisation
+              </a>
+              
+            </div>
+            <div class="mdc-list-item mdc-drawer-item">
+              
+            </div>
+            <div class="mdc-list-item mdc-drawer-item" href="#" data-toggle="expansionPanel" target-panel="ui-sub-menu">
+              <a class="mdc-drawer-link" href="#">
+                
+              </a>
+              <div class="mdc-expansion-panel" id="ui-sub-menu">
+                <nav class="mdc-list mdc-drawer-submenu">
+                  <div class="mdc-list-item mdc-drawer-item">
+                    <a class="mdc-drawer-link" href="pages/ui-features/buttons.html">
+                      Buttons
+                    </a>
+                  </div>
+                  <div class="mdc-list-item mdc-drawer-item">
+                    <a class="mdc-drawer-link" href="pages/ui-features/typography.html">
+                      Typography
+                    </a>
+                  </div>
+                </nav>
+              </div>
+            </div>
+            
+            
+            <div class="mdc-list-item mdc-drawer-item" href="#" data-toggle="expansionPanel" target-panel="sample-page-submenu">
+              <a class="mdc-drawer-link" href="#">
+                
+              </a>
+              <div class="mdc-expansion-panel" id="sample-page-submenu">
+                <nav class="mdc-list mdc-drawer-submenu">
+                  <div class="mdc-list-item mdc-drawer-item">
+                    <a class="mdc-drawer-link" href="pages/samples/blank-page.html">
+                      Blank Page
+                    </a>
+                  </div>
+                  <div class="mdc-list-item mdc-drawer-item">
+                    <a class="mdc-drawer-link" href="pages/samples/403.html">
+                      403
+                    </a>
+                  </div>
+                  <div class="mdc-list-item mdc-drawer-item">
+                    <a class="mdc-drawer-link" href="pages/samples/404.html">
+                      404
+                    </a>
+                  </div>
+                  <div class="mdc-list-item mdc-drawer-item">
+                    <a class="mdc-drawer-link" href="pages/samples/500.html">
+                      500
+                    </a>
+                  </div>
+                  <div class="mdc-list-item mdc-drawer-item">
+                    <a class="mdc-drawer-link" href="pages/samples/505.html">
+                      505
+                    </a>
+                  </div>
+                  <div class="mdc-list-item mdc-drawer-item">
+                    <a class="mdc-drawer-link" href="pages/samples/login.html">
+                      Login
+                    </a>
+                  </div>
+                  <div class="mdc-list-item mdc-drawer-item">
+                    <a class="mdc-drawer-link" href="pages/samples/register.html">
+                      Register
+                    </a>
+                  </div>
+
+                </nav>
+              </div>
+            </div>
+            <div class="mdc-list-item mdc-drawer-item purchase-link">
+              
+            </div>
+          </nav>
+        </div>
+      </nav>
+    </aside>
+    <!-- partial -->
+    <!-- partial:partials/_navbar.html -->
+    <header class="mdc-toolbar mdc-elevation--z4 mdc-toolbar--fixed">
+      <div class="mdc-toolbar__row">
+        <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+          
+          <span class="mdc-toolbar__input">
+            <div class="mdc-text-field">
+             
+            </div>
+          </span>
+        </section>
+        <section class="mdc-toolbar__section mdc-toolbar__section--align-end" role="toolbar">
+          
+          <div class="mdc-menu-anchor">
+            <a href="#" class="mdc-toolbar__icon mdc-ripple-surface" data-mdc-auto-init="MDCRipple">
+              <i class="material-icons">widgets</i>
+            </a>
+          </div>
+          <div class="mdc-menu-anchor mr-1">
+            <a href="#" class="mdc-toolbar__icon toggle mdc-ripple-surface" data-toggle="dropdown" toggle-dropdown="logout-menu" data-mdc-auto-init="MDCRipple">
+              <i class="material-icons">more_vert</i>
+            </a>
+            <div class="mdc-simple-menu mdc-simple-menu--right" tabindex="-1" id="logout-menu">
+                <ul class="mdc-simple-menu__items mdc-list" role="menu" aria-hidden="true">
+                  
+                  <li class="mdc-list-item" role="menuitem" tabindex="0">
+                    <i class="material-icons mdc-theme--primary mr-1">power_settings_new</i>
+                    Logout
+                  </li>
+                </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </header>
+    <!-- partial -->
+    <div class="page-wrapper mdc-toolbar-fixed-adjust">
+      <main class="content-wrapper">
+        
+            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-8">
+              
+               <form style="text-align:center;margin:auto;display:none" id="adduser" method="post" action="/userRegister">
+                <input type="text" name="firstname" placeholder="firstname.." style="width:200px;border:1px solid black;border-radius:5px;padding:10px;">&nbsp;&nbsp;
+                <input type="text" name="lastname" placeholder="lastname.." style="width:200px;border:1px solid black;border-radius:5px;padding:10px;"><br><br>
+                <input type="number" name="contact" placeholder="contact.." style="width:200px;border:1px solid black;border-radius:5px;padding:10px;">&nbsp;&nbsp;
+                <input type="text" name="address" placeholder="address.." style="width:200px;border:1px solid black;border-radius:5px;padding:10px;"><br><br>
+                <input type="date" name="startDate" placeholder="start date" style="width:200px;border:1px solid black;border-radius:5px;padding:10px;">&nbsp;&nbsp;
+                <input type="date" name="age" placeholder="age..." style="width:200px;border:1px solid black;border-radius:5px;padding:10px;"><br><br>
+                <input type="text" name="bloodGroup" placeholder="blood group" style="width:200px;border:1px solid black;border-radius:5px;padding:10px;">&nbsp;&nbsp;
+                <input type="text" name="panNumber" placeholder="Pan Number.." style="width:200px;border:1px solid black;border-radius:5px;padding:10px;"><br><br>
+                <input type="text" name="salary" placeholder="Salary" style="width:200px;border:1px solid black;border-radius:5px;padding:10px;">&nbsp;&nbsp;
+                
+                <select style="width:220px;border:1px solid black;border-radius:5px;padding:10px;">
+                <option value="enable" >Enable</option>
+                <option value="disable">Disable</option>
+                </select><br><br>
+                gender:
+                <input type="radio" name="admin" value="male">male
+                <input type="radio" name="admin" value="female">female<br><br>
+                <input type='file' name="photo"><br><br>
+                <input type="submit" value="submit" style="width:200px;border:1px solid black;border-radius:5px;padding:10px" id="submitbtn">
+              </form>       
+            </div>
+                                        
+                    
+                    
+                    
+  <!-- body wrapper -->
+  <!-- plugins:js -->
+  <script src="node_modules/material-components-web/dist/material-components-web.min.js"></script>
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+  <script src="../../../node_modules/progressbar.js/dist/progressbar.min.js"></script>
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="js/misc.js"></script>
+  <script src="js/material.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="js/dashboard.js"></script>
+  <!-- End custom js for this page-->
+  <script>
+    var x=document.querySelector('#adduser');
+    var y=document.querySelector('#admin');
+    var z=document.querySelector("#user");
+    var k=document.querySelector("#organisation");
+    y.addEventListener('click',(e)=>{
+      e.preventDefault();
+      
+      z.style.display="block";
+      k.style.display="block";
+    })
+    z.addEventListener('click',()=>{
+      x.style.display="block";
+    })
+    
+  </script>
+</body>
+
+</html>
