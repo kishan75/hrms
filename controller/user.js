@@ -8,13 +8,6 @@ var collection = {};
 
 collection.logIn = function (req, res, next) {
     console.log(req.body);
-    if (key.superAdmin.id == req.body.username && key.superAdmin.password == req.body.password) {
-        req.superAdmin = true;
-        return res.render('dashboard', {
-            superAdmin: true
-        })
-    }
-
     passport.authenticate("local", function (err, user, info) {
         if (err) {
             console.log(err);
@@ -29,10 +22,7 @@ collection.logIn = function (req, res, next) {
                 console.log(err);
                 res.status(500).send("internal server problem");
             }
-            return res.status(200).send(JSON.stringify({
-                path: "/",
-                msg: "logged in successfully"
-            }));
+            return res.redirect('/');
         });
     })(req, res, next);
 };
@@ -44,6 +34,9 @@ collection.logOut = function (req, res) {
     res.status(200).redirect("/");
 };
 collection.signUp = function (req, res, next) {
+    model.User.find({},function(err,result){
+    
+    });
     model.User.findOne({
         email: req.body.email
     }, function (err, result) {

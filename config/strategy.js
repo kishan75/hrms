@@ -9,6 +9,11 @@ passport.serializeUser(function (user, done) {
 });
 
 passport.deserializeUser(function (id, done) {
+    if(user._id=='admin')
+    {
+        return done(null, key.superAdmin);
+    }
+    else
     model.User.findById(id, function (err, res) {
         if (err)
             {
@@ -24,9 +29,9 @@ passport.use(new LocalStrategy({
         passwordField: "password"
     },
     function (username, password, done) {
-       // if(key.superAdmin.id==username && key.superAdmin.password==password){
-       //  return done(null ,key.superAdmin);
-       // }
+       if(key.superAdmin.email==username && key.superAdmin.password==password){
+         return done(null ,key.superAdmin);
+        }
         model.User.findOne({
             email: username
         }, function (err, user) {

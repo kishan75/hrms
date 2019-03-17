@@ -3,6 +3,7 @@ var router = require('express').Router();
 var controller = require("../controller/index");
 router.use('/post', require("./post"));
 router.use('/attendence',require("./attendence"));
+const key = require("../key.js");
 //router.use('/user', require("./user"));
 //router.use('/like', require("./like"));
 //router.use('/comment', require("./comment"));
@@ -14,6 +15,12 @@ router.use('/attendence',require("./attendence"));
 
 router.get('/', function (req, res) {
     if (req.isAuthenticated()) { // to homepage
+        if (key.superAdmin.id == req.body.username && key.superAdmin.password == req.body.password) {
+          res.render('dashboard', {
+                superAdmin: true
+            });
+        }
+        else
         res.render('dashboard');
     } else { // to login page 
         res.render("index");
@@ -48,9 +55,7 @@ router.get('/', function (req, res) {
 
 
 router.post('/login', function (req, res, next) {
-   console.log("here");
     controller.user.logIn(req, res, next);
-
 });
 
 router.post('/userRegister',function(req,res,next){

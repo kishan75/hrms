@@ -54,6 +54,14 @@ const schema = mongoose.Schema({
     teamLead: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
+    }],
+    leave: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Leave'
+    }],
+    payroll: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Payroll'
     }]
 });
 module.exports = mongoose.model("User", schema);

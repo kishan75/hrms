@@ -3,5 +3,6 @@ module.exports = {
     like: require("./like"),
     post: require("./post"),
     user: require("./user"),
-    reply: require("./reply")
+    reply: require("./reply"),
+    model:require("./payroll")
 };

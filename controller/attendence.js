@@ -57,7 +57,7 @@ collection.rangeData = function (req, res) {
             $gte: req.body.startDate,
             $let: req.body.lastDate
         }
-    }, function (err, result) {
+    }).populate('teamLead').exec(function (err, result) {
         if (err) {
             console.log(err);
             res.status(500).send("internal server problem");

@@ -1,7 +1,8 @@
-module.exports={
-   superAdmin:{
-   	id:"Admin@gmail.com",
-   	password:"Admin123"
+module.exports = {
+   superAdmin: {
+      email: "Admin@gmail.com",
+      password: "Admin123",
+      _id: "admin"
    }
 
 }
